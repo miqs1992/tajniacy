@@ -6,4 +6,6 @@ class User < ApplicationRecord
   devise :database_authenticatable, :rememberable, :validatable
 
   validates :name, presence: true, uniqueness: true
+
+  has_many :created_games, class_name: 'Game', foreign_key: 'creator_id', dependent: :delete_all
 end
