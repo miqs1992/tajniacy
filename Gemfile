@@ -9,6 +9,7 @@ gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
 
 gem 'bootsnap', require: false
 gem 'devise'
+gem 'fast_jsonapi'
 gem 'jbuilder'
 gem 'pg'
 gem 'puma'
