@@ -8,4 +8,6 @@ class User < ApplicationRecord
   validates :name, presence: true, uniqueness: true
 
   has_many :created_games, class_name: 'Game', foreign_key: 'creator_id', dependent: :delete_all
+  has_many :games_users, dependent: :delete_all
+  has_many :games, through: :games_users
 end
