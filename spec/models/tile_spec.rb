@@ -7,7 +7,7 @@ describe Tile do
     expect(create(:tile)).to be_valid
   end
 
-  describe 'validations' do
+  describe 'validations & relations' do
     before { create(:tile) }
 
     it do

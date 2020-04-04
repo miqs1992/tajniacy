@@ -30,7 +30,7 @@ class Game < ApplicationRecord
   private
 
   def create_tiles
-    words = CSV.read('lib/words_lists/pl.csv').flatten.shuffle
+    words = CSV.read('lib/words_lists/pl.csv').flatten.compact.shuffle
     create_tile(:bomb, words)
     9.times { create_tile(red? ? :red : :blue, words) }
     8.times { create_tile(red? ? :blue : :red, words) }

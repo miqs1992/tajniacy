@@ -3,7 +3,7 @@
 class GameSerializer < BaseSerializer
   attributes :starting_team, :status
 
-  attribute :tiles do |game, options|
-    TileSerializer.new(game.tiles, options).serializable_hash[:data]
+  attribute :tiles do |game, params|
+    TileSerializer.new(game.tiles, { params: params }).serializable_hash[:data]
   end
 end
